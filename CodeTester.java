@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class CodeTester {
 
     public static int linearSearch(int[] arr, int num) {
@@ -36,13 +38,34 @@ public class CodeTester {
         // System.out.println("Element found at index " + index);
         // }
         // sorted arr need for binary search
-
         int[] arr = { 10, 20, 30, 40, 50, 60, 70 };
-        int element = binarySearch(arr, 0, arr.length - 1, 30);
-        if (element == -1) {
-            System.out.println("Element not found");
-        } else {
-            System.out.println("Element found " + element);
+        System.out.println("Which searching algorithm you want to use ?");
+        System.out.println("Press 1 for Linear search");
+        System.out.println("press 2 for Binary search");
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+        switch (choice) {
+            case 1:
+                int index = linearSearch(arr, 50);
+                if (index == -1) {
+                    System.out.println("Element not found");
+                } else {
+                    System.out.println("Element found at index " + index);
+                }
+                break;
+            case 2:
+                int element = binarySearch(arr, 0, arr.length - 1, 30);
+                if (element == -1) {
+                    System.out.println("Element not found");
+                } else {
+                    System.out.println("Element found " + element);
+                }
+                break;
+
+            default:
+                System.out.println("Only 1 or 2 is expected as input !!!!");
+                break;
         }
+
     }
 }
