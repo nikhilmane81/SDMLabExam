@@ -66,6 +66,6 @@ public class CodeTester {
                 System.out.println("Only 1 or 2 is expected as input !!!!");
                 break;
         }
-
+        sc.close();
     }
 }
